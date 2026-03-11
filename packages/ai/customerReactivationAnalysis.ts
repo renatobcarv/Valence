@@ -1,6 +1,6 @@
 /**
- * Analyzes inactive customers and generates retention insights.
+ * Analisa clientes inativos e gera insights de retenção.
  */
 export async function generateReactivationStrategy(customerContext: any) {
-  return { recommendation: "Send personalized discount based on previous purchase." };
+  return { recommendation: "Enviar desconto personalizado com base na compra anterior." };
 }

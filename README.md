@@ -1,91 +1,90 @@
 # Valence
 
-**Valence** is a Brazilian startup building intelligent software to help companies detect and recover lost revenue automatically.
+A **Valence** é uma startup brasileira que constrói software inteligente para ajudar empresas a detectar e recuperar receita perdida automaticamente.
 
-Our mission is simple:
+Nossa missão é simples:
 
-> Help businesses never lose revenue again.
+> Ajudar as empresas a nunca mais perderem receita.
 
-Every day, companies lose money due to missed opportunities, forgotten leads, abandoned quotes, and lack of sales visibility.
-Valence was created to solve this problem.
-
----
-
-# 🇧🇷 About
-
-Valence is a **Brazilian technology startup** focused on revenue intelligence and sales optimization.
-
-We develop AI-powered tools that analyze business data to identify hidden revenue opportunities and help companies recover missed sales.
-
-Our goal is to build the **intelligence layer for business revenue**.
+Todos os dias, empresas perdem dinheiro devido a oportunidades perdidas, leads esquecidos, orçamentos abandonados e falta de visibilidade nas vendas. A Valence foi criada para resolver esse problema.
 
 ---
 
-# The Problem
+# 🇧🇷 Sobre
 
-Most companies lose revenue without realizing it.
+A Valence é uma **startup de tecnologia brasileira** focada em inteligência de receita e otimização de vendas.
 
-Common causes include:
+Desenvolvemos ferramentas baseadas em IA que analisam dados de negócios para identificar oportunidades de receita ocultas e ajudar as empresas a recuperar vendas perdidas.
 
-• abandoned leads
-• forgotten sales opportunities
-• untracked quotes
-• poor follow-up processes
-• disconnected systems
-• lack of visibility into sales pipelines
-
-These small failures silently create **massive revenue leakage**.
+Nosso objetivo é construir a **camada de inteligência para a receita das empresas**.
 
 ---
 
-# Our Solution
+# O Problema
 
-Valence analyzes business data to detect revenue opportunities that were lost, ignored, or forgotten.
+A maioria das empresas perde receita sem perceber.
 
-Instead of relying on manual processes, companies can use Valence to automatically discover where money is being left on the table.
+Causas comuns incluem:
 
----
+• leads abandonados
+• oportunidades de vendas esquecidas
+• orçamentos sem acompanhamento
+• processos de follow-up deficientes
+• sistemas desconectados
+• falta de visibilidade nos funis de vendas
 
-# The Core Technology
-
-## Lost Revenue Detection Engine
-
-At the heart of Valence is our proprietary system:
-
-**Lost Revenue Detection Engine — powered by AI**
-
-This engine analyzes business data across different sources and detects:
-
-• abandoned sales opportunities
-• forgotten leads
-• stalled deals
-• missed follow-ups
-• revenue leakage patterns
-
-It then surfaces actionable insights so businesses can recover revenue quickly.
+Essas pequenas falhas criam silenciosamente um **vazamento massivo de receita**.
 
 ---
 
-# Core Features
+# Nossa Solução
 
-• Lost revenue detection
-• Sales opportunity recovery
-• AI-powered sales insights
-• Revenue monitoring
-• Opportunity alerts
-• Business data analysis
+A Valence analisa os dados do negócio para detectar oportunidades de receita que foram perdidas, ignoradas ou esquecidas.
+
+Em vez de depender de processos manuais, as empresas podem usar a Valence para descobrir automaticamente onde o dinheiro está sendo deixado na mesa.
 
 ---
 
-# Vision
+# Tecnologia Principal
 
-Our long-term vision is to build the **operating system for revenue intelligence**.
+## Motor de Detecção de Receita Perdida
 
-A platform where companies can clearly see:
+No coração da Valence está nosso sistema proprietário:
 
-• where revenue is being lost
-• why it's happening
-• how to recover it
+**Lost Revenue Detection Engine — movido por IA**
+
+Este motor analisa dados de negócios em diferentes fontes e detecta:
+
+• oportunidades de vendas abandonadas
+• leads esquecidos
+• negócios travados
+• falta de follow-ups
+• padrões de vazamento de receita
+
+Em seguida, ele apresenta insights acionáveis para que as empresas possam recuperar a receita rapidamente.
+
+---
+
+# Principais Recursos
+
+• Detecção de vazamento de receita
+• Recuperação de oportunidades de vendas
+• Insights de vendas baseados em IA
+• Monitoramento de receita
+• Alertas de oportunidade
+• Análise de dados de negócios
+
+---
+
+# Visão
+
+Nossa visão de longo prazo é construir o **sistema operacional para inteligência de receita**.
+
+Uma plataforma onde as empresas possam ver claramente:
+
+• onde a receita está sendo perdida
+• por que isso está acontecendo
+• como recuperá-la
 
 ---
 
@@ -93,11 +92,11 @@ A platform where companies can clearly see:
 
 Frontend — Next.js
 Backend — Node.js
-Database — PostgreSQL
-AI — LLM-powered analysis
+Banco de Dados — PostgreSQL
+IA — Análise baseada em LLM
 
 ---
 
 # Status
 
-Early stage startup — building the first version of the Valence platform.
+Startup em estágio inicial — construindo a primeira versão da plataforma Valence.
