@@ -1,4 +1,4 @@
-// File: C:\cods\Valence\apps\web\src\app\legal\terms\page.tsx
+// File: C:\Codding\Valence\apps\web\src\app\legal\terms\page.tsx
 import * as entry from '../../../../../src/app/legal/terms/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
