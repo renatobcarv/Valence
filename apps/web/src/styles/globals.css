@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --accent: 6 78% 54%; /* #e74c3c */
+  }
+
+  body {
+    @apply bg-black text-white selection:bg-[#e74c3c] selection:text-white antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#2a2a2a] rounded-full hover:bg-[#e74c3c] transition-colors;
+  }
+}
+
+.bg-fintech-gradient {
+  background: radial-gradient(circle at center, #111111 0%, #000000 100%);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50;
+}
