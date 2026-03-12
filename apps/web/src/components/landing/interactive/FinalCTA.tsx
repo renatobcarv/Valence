@@ -2,34 +2,42 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Button } from '@/components/layout/Navbar';
 
 export const FinalCTA = () => {
     return (
-        <section className="py-32 lg:py-48 bg-black relative z-10 overflow-hidden border-t border-[#2a2a2a]">
+        <section className="py-32 lg:py-48 bg-black relative z-10 overflow-hidden border-t border-white/5">
 
-            {/* Soft grid background */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+            {/* Glowing background influence */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
+                    initial={{ scale: 0.95, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.9] uppercase">
-                        PARE DE DEIXAR <span className="text-[#e74c3c]">RECEITA</span> DESAPARECER.
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-10">
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Decisão Estratégica</span>
+                    </div>
+                    
+                    <h2 className="text-6xl md:text-9xl font-black tracking-tighter text-white mb-10 leading-[0.85] uppercase font-display">
+                        PARE DE DEIXAR <br />
+                        <span className="text-gradient">RECEITA EVAPORAR.</span>
                     </h2>
 
-                    <p className="text-xl text-[#b3b3b3] mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Conecte a Valence hoje mesmo e descubra exatamente o valor financeiro que está oculto no seu CRM.
+                    <p className="text-xl text-white/40 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                        Conecte a camada de inteligência Valence hoje mesmo e recupere o valor financeiro que está oculto no seu CRM.
                     </p>
 
-                    <div className="relative inline-block group cursor-pointer">
-                        <div className="absolute -inset-2 bg-[#e74c3c] rounded-lg blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
-                        <button className="relative px-12 py-6 bg-black border border-[#e74c3c] text-white font-black uppercase tracking-[0.2em] text-sm rounded-lg hover:bg-[#e74c3c] transition-colors duration-300 shadow-2xl">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <Button variant="primary" className="px-12 py-6 text-base shadow-[0_0_50px_rgba(231,76,60,0.3)]">
                             Solicitar Acesso Antecipado
-                        </button>
+                        </Button>
+                        <Button variant="secondary" className="px-12 py-6 text-base">
+                            Falar com um Especialista
+                        </Button>
                     </div>
                 </motion.div>
             </div>

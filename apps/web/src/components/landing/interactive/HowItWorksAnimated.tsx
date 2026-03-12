@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GlassCard } from '@/components/ui/GlassCard';
 
 const steps = [
-    { num: '01', title: 'CONECTE', desc: 'Integre CRM e e-mail em minutos.', icon: '🔌' },
-    { num: '02', title: 'ANALISE', desc: 'A IA mapeia todo o seu pipeline histórico.', icon: '🧠' },
-    { num: '03', title: 'RECUPERE', desc: 'Descubra a receita perdida e reative deals.', icon: '💰' }
+    { num: '01', title: 'CONECTE', desc: 'Integre CRM e e-mail em minutos via conectores nativos.', icon: '🔌' },
+    { num: '02', title: 'ANALISE', desc: 'Nossa IA mapeia todo o seu pipeline histórico em tempo real.', icon: '🧠' },
+    { num: '03', title: 'RECUPERE', desc: 'Descubra a receita perdida e reative deals estagnados.', icon: '💰' }
 ];
 
 export const HowItWorksAnimated = () => {
     return (
-        <section className="py-24 lg:py-40 bg-black relative z-10">
+        <section className="py-24 lg:py-40 bg-black relative z-10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -19,14 +20,18 @@ export const HowItWorksAnimated = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20 lg:mb-32"
                 >
-                    <h2 className="text-4xl lg:text-5xl font-black tracking-tighter text-white uppercase italic">
-                        COMO A VALENCE <span className="text-[#e74c3c]">FUNCIONA</span>
+                    <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Processo Operacional</span>
+                    </div>
+                    <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white uppercase font-display leading-[0.9]">
+                        ENGENHARIA DE <br />
+                        <span className="text-gradient">RECUPERAÇÃO ATIVA</span>
                     </h2>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-12 relative">
+                <div className="grid md:grid-cols-3 gap-8 relative">
                     {/* Connecting Line Desktop */}
-                    <div className="hidden md:block absolute top-[60px] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent z-0" />
+                    <div className="hidden md:block absolute top-[60px] left-0 w-full h-px bg-white/5 z-0" />
 
                     {steps.map((step, i) => (
                         <motion.div
@@ -35,16 +40,20 @@ export const HowItWorksAnimated = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: i * 0.2 }}
-                            className="relative z-10 flex flex-col items-center text-center group"
+                            className="relative z-10 group"
                         >
-                            <div className="w-[120px] h-[120px] bg-[#111111] border border-[#2a2a2a] rounded-full flex items-center justify-center text-4xl mb-8 group-hover:border-[#e74c3c] group-hover:bg-[#1a1a1a] transition-all duration-500 shadow-2xl relative">
-                                <span className="absolute -top-2 -right-2 w-8 h-8 bg-[#e74c3c] text-white text-[10px] font-black flex items-center justify-center rounded-full border-4 border-black">
-                                    {step.num}
-                                </span>
-                                {step.icon}
-                            </div>
-                            <h3 className="text-xl font-black text-white mb-3 uppercase tracking-tighter">{step.title}</h3>
-                            <p className="text-[#b3b3b3] text-sm leading-relaxed max-w-[250px]">{step.desc}</p>
+                            <GlassCard delay={i * 0.1} glowColor="rgba(255, 255, 255, 0.05)" className="!p-0 h-full">
+                                <div className="p-8 pb-12 flex flex-col items-center text-center">
+                                    <div className="size-20 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-3xl mb-10 group-hover:border-primary group-hover:bg-primary/10 transition-all duration-500 shadow-2xl relative">
+                                        <span className="absolute -top-1 -right-1 size-7 bg-primary text-white text-[9px] font-black flex items-center justify-center rounded-full border-4 border-black font-display">
+                                            {step.num}
+                                        </span>
+                                        {step.icon}
+                                    </div>
+                                    <h3 className="text-lg font-black text-white mb-4 uppercase tracking-tighter font-display leading-tight">{step.title}</h3>
+                                    <p className="text-white/30 text-sm leading-relaxed max-w-[200px] font-medium font-display">{step.desc}</p>
+                                </div>
+                            </GlassCard>
                         </motion.div>
                     ))}
                 </div>

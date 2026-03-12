@@ -2,113 +2,124 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { Button } from '@/components/layout/Navbar';
 
 export const HeroCalculator = () => {
-    const [leads, setLeads] = useState(500);
-    const [dealValue, setDealValue] = useState(2500);
+    const [leads, setLeads] = useState(850);
+    const [dealValue, setDealValue] = useState(4200);
     const [lostRevenue, setLostRevenue] = useState(0);
 
-    // Assuming average 24% of leads are lost without follow-up (from previous copy)
     useEffect(() => {
         const lostLeads = leads * 0.24;
         const potentialRevenue = lostLeads * dealValue;
-
-        // Simple animation logic for the number could be added, but relying on quick React updates for now
         setLostRevenue(Math.floor(potentialRevenue));
     }, [leads, dealValue]);
 
     return (
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 z-10">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
+            
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="grid lg:grid-cols-12 gap-16 items-center">
 
-                    {/* Copy Side */}
+                    {/* Left: Copy */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-2xl"
+                        className="lg:col-span-7"
                     >
-                        <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase leading-[0.9]">
-                            Quanta receita sua empresa perde sem <span className="text-[#e74c3c]">perceber</span>?
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Análise de Receita via IA Ativa</span>
+                        </div>
+
+                        <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.85] font-display uppercase">
+                            RECUPERE <br />
+                            <span className="text-gradient">RECEITA PERDIDA</span> <br />
+                            COM INTELIGÊNCIA.
                         </h1>
-                        <p className="text-xl text-[#b3b3b3] mb-10 leading-relaxed font-medium">
-                            A Valence analisa seus dados de vendas e revela oportunidades de receita ocultas dentro do seu próprio funil.
+                        <p className="text-xl text-white/40 mb-10 leading-relaxed font-medium max-w-xl">
+                            A Valence analisa silenciosamente seu funil de vendas, detecta vazamentos de receita em tempo real e automatiza a recuperação estratégica.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="px-8 py-4 bg-[#e74c3c] text-white font-bold uppercase tracking-widest text-sm rounded-md shadow-[0_0_20px_rgba(231,76,60,0.2)] hover:shadow-[0_0_30px_rgba(231,76,60,0.4)] transition-all hover:-translate-y-1">
-                                Descobrir Receita Oculta
-                            </button>
-                            <button className="px-8 py-4 bg-transparent border border-[#2a2a2a] text-white font-bold uppercase tracking-widest text-sm rounded-md hover:border-[#e74c3c] hover:bg-[#e74c3c]/5 transition-all">
-                                Ver como funciona
-                            </button>
+                            <Button variant="primary" className="px-10 py-5 text-sm">
+                                Começar Recuperação Grátis
+                            </Button>
+                            <Button variant="secondary" className="px-10 py-5 text-sm">
+                                Ver Demonstração
+                            </Button>
                         </div>
                     </motion.div>
 
-                    {/* Calculator Side */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-8 relative overflow-hidden group"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#e74c3c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                        <div className="relative z-10">
-                            <h3 className="text-sm font-black text-[#555] uppercase tracking-[0.2em] mb-8 text-center">Simulador de Perda de Receita</h3>
-
-                            <div className="space-y-8 mb-10">
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <label className="text-xs font-bold text-[#b3b3b3] uppercase tracking-wider">Leads Mensais</label>
-                                        <span className="text-white font-bold">{leads}</span>
-                                    </div>
-                                    <input
-                                        type="range"
-                                        min="50" max="5000" step="10"
-                                        value={leads}
-                                        onChange={(e) => setLeads(Number(e.target.value))}
-                                        className="w-full h-1 bg-[#2a2a2a] rounded-lg appearance-none cursor-pointer accent-[#e74c3c]"
-                                    />
+                    {/* Right: Premium Calculator */}
+                    <div className="lg:col-span-5">
+                        <GlassCard delay={0.2} glowColor="rgba(231, 76, 60, 0.15)" className="border-white/10 px-0 py-0">
+                            <div className="p-8 space-y-10">
+                                <div className="text-center">
+                                    <h3 className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-2 font-display">Simulador de Impacto Valence</h3>
+                                    <div className="h-px w-12 bg-primary/30 mx-auto" />
                                 </div>
 
-                                <div>
-                                    <div className="flex justify-between mb-2">
-                                        <label className="text-xs font-bold text-[#b3b3b3] uppercase tracking-wider">Ticket Médio (R$)</label>
-                                        <span className="text-white font-bold">R$ {dealValue.toLocaleString('pt-BR')}</span>
+                                <div className="space-y-8">
+                                    <div className="space-y-4">
+                                        <div className="flex justify-between items-end">
+                                            <label className="text-[10px] font-black text-white/40 uppercase tracking-widest">Leads Mensais</label>
+                                            <span className="text-2xl font-black text-white font-display tabular-nums tracking-tighter">{leads}</span>
+                                        </div>
+                                        <div className="relative group/slider">
+                                            <input
+                                                type="range"
+                                                min="100" max="5000" step="50"
+                                                value={leads}
+                                                onChange={(e) => setLeads(Number(e.target.value))}
+                                                className="w-full h-1.5 bg-white/5 rounded-full appearance-none cursor-pointer accent-primary group-hover/slider:bg-white/10 transition-colors"
+                                            />
+                                        </div>
                                     </div>
-                                    <input
-                                        type="range"
-                                        min="100" max="20000" step="100"
-                                        value={dealValue}
-                                        onChange={(e) => setDealValue(Number(e.target.value))}
-                                        className="w-full h-1 bg-[#2a2a2a] rounded-lg appearance-none cursor-pointer accent-[#e74c3c]"
-                                    />
+
+                                    <div className="space-y-4">
+                                        <div className="flex justify-between items-end">
+                                            <label className="text-[10px] font-black text-white/40 uppercase tracking-widest">Ticket Médio (R$)</label>
+                                            <span className="text-2xl font-black text-white font-display tabular-nums tracking-tighter">R$ {dealValue.toLocaleString('pt-BR')}</span>
+                                        </div>
+                                        <div className="relative group/slider">
+                                            <input
+                                                type="range"
+                                                min="500" max="50000" step="500"
+                                                value={dealValue}
+                                                onChange={(e) => setDealValue(Number(e.target.value))}
+                                                className="w-full h-1.5 bg-white/5 rounded-full appearance-none cursor-pointer accent-primary group-hover/slider:bg-white/10 transition-colors"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/5 text-center relative overflow-hidden group/result">
+                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover/result:opacity-100 transition-opacity duration-500" />
+                                    
+                                    <div className="relative space-y-2">
+                                        <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">Receita Recuperável Estimada</p>
+                                        <div className="text-5xl lg:text-6xl font-black text-primary font-display tracking-tighter tabular-nums drop-shadow-glow">
+                                            <AnimatedCounter to={lostRevenue} prefix="R$ " />
+                                        </div>
+                                        <div className="pt-4">
+                                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-[9px] font-bold text-white/20 uppercase tracking-widest">
+                                                *Média Valence: +18% de eficácia anual
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div className="p-6 bg-black border border-[#2a2a2a] rounded-xl text-center relative overflow-hidden">
-                                <motion.div
-                                    className="absolute -inset-1 bg-[#e74c3c]/20 blur-xl rounded-xl"
-                                    animate={{ opacity: [0.3, 0.6, 0.3] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                />
-                                <div className="relative">
-                                    <p className="text-[10px] font-bold text-[#b3b3b3] uppercase tracking-[0.2em] mb-2">Estimativa de Receita Perdida (Mês)</p>
-                                    <motion.p
-                                        key={lostRevenue}
-                                        initial={{ scale: 0.9, opacity: 0.8 }}
-                                        animate={{ scale: 1, opacity: 1 }}
-                                        className="text-4xl lg:text-5xl font-black text-[#e74c3c] tracking-tighter"
-                                    >
-                                        R$ {lostRevenue.toLocaleString('pt-BR')}
-                                    </motion.p>
-                                    <p className="text-[9px] text-[#555] uppercase mt-4 tracking-widest">* Baseado na média de mercado de 24% de leads sem follow-up</p>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
+                        </GlassCard>
+                    </div>
 
                 </div>
             </div>

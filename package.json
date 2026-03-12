@@ -7,7 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspaces",
+    "dev": "npm run dev:platform",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:platform": "npm run dev -w apps/platform",
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\""

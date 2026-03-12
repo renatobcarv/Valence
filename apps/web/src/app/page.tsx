@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { NetworkBackground } from '@/components/landing/interactive/NetworkBackground';
+import { IntelligentBackground } from '@/components/landing/interactive/IntelligentBackground';
 import { HeroCalculator } from '@/components/landing/interactive/HeroCalculator';
 import { ProblemCards } from '@/components/landing/interactive/ProblemCards';
 import { PipelineStory } from '@/components/landing/interactive/PipelineStory';
@@ -13,7 +13,7 @@ import { FinalCTA } from '@/components/landing/interactive/FinalCTA';
 export default function Home() {
   return (
     <>
-      <NetworkBackground />
+      <IntelligentBackground />
       <Navbar />
       <main className="relative z-10">
         <HeroCalculator />
@@ -31,4 +31,3 @@ export default function Home() {
     </>
   );
 }
-
